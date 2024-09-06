@@ -18,9 +18,9 @@
 
 	{{ $scratch := newScratch }}
 	{{ if .Site.Params.writers }}
-		{{ $scratch.Set "writer" (index .Site.Params.writers (lower .Params.writer) | default dict) }}
+		{{ $scratch.Set "writer" (index .Site.Params.writers (lower .Params.writer)) }}
 	{{ else }}
-		{{ $scratch.Set "writer" .Site.Params.social | default dict }}
+		{{ $scratch.Set "writer" .Site.Params.social }}
 	{{ end }}
 	{{ $writer := $scratch.Get "writer" }}
 
