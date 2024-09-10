@@ -28,10 +28,10 @@
           <span> / </span><span class="date">{{ .Date.Format "02 January" }}</span>	<span> / </span>
           {{ end }}
           
-
-          {{if or (gt (len (.Params.writer | default "")) 0)  (gt (len (.Site.Params.author | default "")) 0) }}
+{{/*  todo fix author and links  */}}
+          {{if or (gt (len (.Params.writer | default "")) 0)  (gt (len (.Params.author | default "")) 0) }}
           <span class="author">
-            <a href="{{ $writer.link | default .Site.Params.authorlink | absURL }}" title="Posts by {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a>
+            <a href="{{ $writer.link | default .Site.Params.authorlink | absURL }}" title="Posts by {{ .Params.writer | default .Params.author }}" rel="author">{{ .Params.writer | default .Params.author }}</a>
           </span>
           <span> / </span>
           {{end}}
